@@ -1,0 +1,32 @@
+name:                total-maps
+version:             0.1.0.0
+synopsis:            Dense and sparse total maps.
+description:
+  Total maps are maps that contain a value for every key. Maps in this library
+  implement typeclasses form the 'keys' package, as well as Linear and Metric
+  from 'linear'.
+  .
+  Dense maps store values for all keys. Sparse maps store a default value
+  and the values which differ from the default.
+  .
+  Bounded maps require the key type to be bounded (have a finite number of
+  values) for most of their functionality. Subset maps do not require the
+  key to be bounded, instead they are parametized by a finite set of
+  valid keys. The key subset is retrieved with help of the excellent
+  'reflection' library.
+license:             MIT
+license-file:        LICENSE
+author:              Paweł Nowak
+maintainer:          pawel834@gmail.com
+copyright:           2015 Paweł Nowak
+category:            Data,Data Structures,Containers
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.Total.Map
+  default-extensions:  FlexibleContexts, FlexibleInstances,
+                       ScopedTypeVariables
+  build-depends:       base <5, keys == 3.*
+  hs-source-dirs:      src
+  default-language:    Haskell2010
