@@ -2,7 +2,6 @@
 {-# LANGUAGE DeriveFoldable #-}
 {-# LANGUAGE DeriveFunctor #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE Unsafe #-}
 -----------------------------------------------------------------------------
 -- |
 -- Description :  Bounded dense total map implemented as a vector.
