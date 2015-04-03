@@ -98,7 +98,7 @@ instance (Ord k, Subset s k, Serial a) => Serial (TotalSubsetMap s k a) where
 
 -- Distributive and representable.
 
--- | Complexity: all O(n)
+-- | Complexity: 'distribute' O(n * fmap)
 instance (Ord k, Subset s k) => Distributive (TotalSubsetMap s k) where
     distribute = TotalSubsetMap . Map.fromDistinctAscList
                . zip keys
@@ -108,7 +108,8 @@ instance (Ord k, Subset s k) => Distributive (TotalSubsetMap s k) where
         asList (TotalSubsetMap m) = Map.elems m
         distributeList x = map (fmap head) $ iterate (fmap tail) x
 
--- | Convert from and to a partial function.
+-- | Convert from and to a partial function that would be total if
+-- restricted to s.
 --
 -- Complexity: tabulate O(n), index O(log n)
 instance (Ord k, Subset s k) => Representable (TotalSubsetMap s k) where

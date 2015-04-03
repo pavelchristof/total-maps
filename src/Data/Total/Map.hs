@@ -88,7 +88,7 @@ instance (Ord k, Enum k, Bounded k, Serial a) => Serial (TotalMap k a) where
 
 -- Distributive and representable.
 
--- | Complexity: all O(n * log n)
+-- | Complexity: 'distribute' O(n * log n + n * fmap)
 instance (Ord k, Enum k, Bounded k) => Distributive (TotalMap k) where
     distribute = TotalMap . Map.fromDistinctAscList
                . zip keys
