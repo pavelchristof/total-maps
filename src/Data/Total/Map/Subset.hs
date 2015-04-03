@@ -13,7 +13,6 @@
 -- Description :  Subset, dense, total map.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
--- Stability   :  provisional
 -- Portability :  portable
 --
 -- Dense, total, maps parametrized by a set of keys.

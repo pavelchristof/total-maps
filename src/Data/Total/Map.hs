@@ -10,7 +10,6 @@
 -- Description :  Bounded, dense, total map.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
--- Stability   :  provisional
 -- Portability :  portable
 --
 -- Dense, total, maps for bounded types.

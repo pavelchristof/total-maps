@@ -8,7 +8,6 @@
 -- Description :  Subset, dense, total map implemented as a vector.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
--- Stability   :  provisional
 -- Portability :  GHC only
 --
 -- Subset, dense, total map implemented as a vector.

@@ -7,7 +7,6 @@
 -- Description :  Bounded, dense, total map implemented as a vector.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
--- Stability   :  provisional
 -- Portability :  portable
 --
 -- Bounded, dense, total map implemented as a vector.

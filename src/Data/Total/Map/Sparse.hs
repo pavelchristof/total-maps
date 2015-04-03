@@ -7,7 +7,6 @@
 -- Description :  Bounded, sparse, total map.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
--- Stability   :  provisional
 -- Portability :  GHC only
 --
 -- Sparse, total maps for bounded types.

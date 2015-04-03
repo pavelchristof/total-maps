@@ -3,7 +3,6 @@
 -- |
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
--- Stability   :  experimental
 -- Portability :  GHC only
 -----------------------------------------------------------------------------
 module Data.Total.Internal.SparseFold where
