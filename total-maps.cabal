@@ -1,5 +1,5 @@
 name:                total-maps
-version:             1.0.0.1
+version:             1.0.0.2
 synopsis:            Dense and sparse total maps.
 description:
   Total maps are maps that contain a value for every key. This library provides
@@ -28,6 +28,11 @@ copyright:           2015 Paweł Nowak
 category:            Data,Data Structures,Containers
 build-type:          Simple
 cabal-version:       >=1.10
+extra-source-files:  CHANGELOG.md
+
+source-repository head
+  type:     git
+  location: https://github.com/pawel-n/total-maps/
 
 library
   exposed-modules:     Data.Total.Subset
