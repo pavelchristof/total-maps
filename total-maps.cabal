@@ -33,7 +33,7 @@ library
                        Data.Total.Map.Sparse
                        Data.Total.Internal.SparseFold
   default-extensions:  FlexibleContexts, FlexibleInstances,
-                       ScopedTypeVariables
+                       ScopedTypeVariables, AutoDeriveTypeable
   build-depends:       base <5, containers >=0.3 && <1, reflection == 1.*,
                        keys ==3.*, linear >=1.1 && <2, bytes >=0.2 && <1,
                        distributive == 0.*, adjunctions == 4.*,
