@@ -15,8 +15,7 @@
 -----------------------------------------------------------------------------
 module Data.Total.Array.Subset (
     Subset,
-    TotalSubsetArray(..),
-    keys
+    TotalSubsetArray(..)
     ) where
 
 import           Data.Bytes.Serial
@@ -53,6 +52,8 @@ toIndex :: (Ord k, Subset s k) => Proxy s -> k -> Int
 toIndex p k = Set.findIndex k (reflect p)
 
 -- | Maps each key to itself.
+--
+-- Complexity: O(n)
 keys :: forall s k. Subset s k => TotalSubsetArray s k k
 keys = TotalSubsetArray (keys' (Proxy :: Proxy s))
 
