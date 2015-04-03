@@ -32,6 +32,7 @@ library
                        Data.Total.Map.Subset
                        Data.Total.Map.Sparse
                        Data.Total.Array
+                       Data.Total.Array.Subset
                        Data.Total.Internal.SparseFold
   default-extensions:  FlexibleContexts, FlexibleInstances,
                        ScopedTypeVariables, AutoDeriveTypeable
