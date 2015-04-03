@@ -3,8 +3,7 @@ version:             0.1.0.0
 synopsis:            Dense and sparse total maps.
 description:
   Total maps are maps that contain a value for every key. Maps in this library
-  implement typeclasses form the 'keys' package, as well as Linear and Metric
-  from 'linear'.
+  implement typeclasses from the 'keys' package (and many more).
   .
   Dense maps store values for all keys. Sparse maps store a default value
   and the values which differ from the default.
@@ -27,7 +26,8 @@ library
   exposed-modules:     Data.Total.Map
   default-extensions:  FlexibleContexts, FlexibleInstances,
                        ScopedTypeVariables
-  build-depends:       base <5, containers >=0.3 && <1,
-                       keys ==3.*, linear >=1.1 && <2, bytes >=0.2 && <1
+  build-depends:       base <5, containers >=0.3 && <1, reflection == 1.*,
+                       keys ==3.*, linear >=1.1 && <2, bytes >=0.2 && <1,
+                       distributive == 0.*, adjunctions == 4.*
   hs-source-dirs:      src
   default-language:    Haskell2010

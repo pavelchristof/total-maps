@@ -1,5 +1,4 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
-{-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE StandaloneDeriving #-}
 {-# LANGUAGE DeriveTraversable #-}
 {-# LANGUAGE DeriveFoldable #-}
@@ -19,6 +18,8 @@ module Data.Total.Map where
 
 import           Control.Applicative
 import           Data.Bytes.Serial
+import           Data.Distributive
+import           Data.Functor.Rep
 import           Data.Key
 import           Data.List (sort)
 import           Data.Map (Map)
@@ -30,9 +31,11 @@ import           Prelude hiding (zip)
 --
 -- Most functions are derived from 'Data.Map.Map'.
 --
+-- n is equal to the number of keys.
+--
 -- Unfortunately I cannot find any law linking Enum with Ord, so we cannot
--- be sure that succ x > x. Because of that functions 'pure', 'deserialize',
--- 'deserializeWith' have complexity O(n * log n), while they could be O(n).
+-- be sure that @[minBound .. maxBound]@ is sorted. Because of that functions
+-- like 'pure' and 'tabulate' have complexity O(n * log n), while they could be O(n).
 newtype TotalMap k a = TotalMap (Map k a)
     deriving (Eq, Ord, Show, Read, Functor, Foldable, Traversable)
 
@@ -82,3 +85,23 @@ instance (Ord k, Enum k, Bounded k) => Serial1 (TotalMap k) where
 instance (Ord k, Enum k, Bounded k, Serial a) => Serial (TotalMap k a) where
     serialize m = serializeWith serialize m
     deserialize = deserializeWith deserialize
+
+-- Distributive and representable.
+
+-- | Complexity: all O(n * log n)
+instance (Ord k, Enum k, Bounded k) => Distributive (TotalMap k) where
+    distribute = TotalMap . Map.fromDistinctAscList
+               . zip keys
+               . distributeList . fmap asList
+      where
+        keys = sort [minBound .. maxBound]
+        asList (TotalMap m) = Map.elems m
+        distributeList x = map (fmap head) $ iterate (fmap tail) x
+
+-- | Convert from and to a @(k -> a)@ function.
+--
+-- Complexity: tabulate O(n * log n), index O(log n)
+instance (Ord k, Enum k, Bounded k) => Representable (TotalMap k) where
+    type Rep (TotalMap k) = k
+    tabulate f = TotalMap $ Map.fromList [(k, f k) | k <- [minBound .. maxBound]]
+    index = Data.Key.index
