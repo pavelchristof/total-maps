@@ -18,7 +18,11 @@
 --
 -- Dense total maps parametrized by a set of keys.
 -----------------------------------------------------------------------------
-module Data.Total.Map.Subset where
+module Data.Total.Map.Subset (
+    Subset,
+    TotalSubsetMap(..),
+    restrict
+    ) where
 
 import           Control.Applicative
 import           Data.Bytes.Serial
@@ -45,14 +49,14 @@ import           Prelude hiding (zip)
 newtype TotalSubsetMap s k a = TotalSubsetMap (Map k a)
     deriving (Eq, Ord, Show, Read, Functor, Foldable, Traversable)
 
-type instance Key (TotalSubsetMap s k) = k
-
 -- | Zippy applicative. Complexity: 'pure' O(n), '<*>' O(n).
 instance (Ord k, Subset s k) => Applicative (TotalSubsetMap s k) where
     pure x = TotalSubsetMap $ Map.fromSet (const x) (reflect (Proxy :: Proxy s))
     (<*>)  = zap
 
 -- Keys instances.
+
+type instance Key (TotalSubsetMap s k) = k
 
 -- TODO: it would be nice to document these, but haddock doesn't allow that.
 

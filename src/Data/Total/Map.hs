@@ -40,14 +40,14 @@ import           Prelude hiding (zip)
 newtype TotalMap k a = TotalMap (Map k a)
     deriving (Eq, Ord, Show, Read, Functor, Foldable, Traversable)
 
-type instance Key (TotalMap k) = k
-
 -- | Zippy applicative. Complexity: 'pure' O(n * log n), '<*>' O(n).
 instance (Ord k, Enum k, Bounded k) => Applicative (TotalMap k) where
     pure x = TotalMap $ Map.fromList [(k, x) | k <- [minBound .. maxBound]]
     (<*>)  = zap
 
 -- Keys instances.
+
+type instance Key (TotalMap k) = k
 
 -- TODO: it would be nice to document these, but haddock doesn't allow that.
 
