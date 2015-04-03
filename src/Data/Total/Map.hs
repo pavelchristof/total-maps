@@ -11,13 +11,12 @@
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
--- Portability :  portable
+-- Portability :  GHC >= 7.10
 --
 -- Dense total maps for bounded types.
 -----------------------------------------------------------------------------
 module Data.Total.Map where
 
-import           Control.Applicative
 import           Data.Bytes.Serial
 import           Data.Distributive
 import           Data.Functor.Rep

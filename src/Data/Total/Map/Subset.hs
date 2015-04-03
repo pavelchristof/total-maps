@@ -14,7 +14,7 @@
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
--- Portability :  GHC only
+-- Portability :  GHC >= 7.10
 --
 -- Dense total maps parametrized by a set of keys.
 -----------------------------------------------------------------------------
@@ -24,7 +24,6 @@ module Data.Total.Map.Subset (
     restrict
     ) where
 
-import           Control.Applicative
 import           Data.Bytes.Serial
 import           Data.Distributive
 import           Data.Functor.Rep
