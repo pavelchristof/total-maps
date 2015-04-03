@@ -7,6 +7,7 @@
 {-# LANGUAGE Trustworthy #-}
 -----------------------------------------------------------------------------
 -- |
+-- Description :  Bounded dense total map.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional

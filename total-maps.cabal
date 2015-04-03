@@ -2,8 +2,8 @@ name:                total-maps
 version:             0.1.0.0
 synopsis:            Dense and sparse total maps.
 description:
-  Total maps are maps that contain a value for every key. Maps in this library
-  implement typeclasses from the 'keys' package (and many more).
+  Total maps are maps that contain a value for every key. This library provides
+  various flavors of total maps.
   .
   Dense maps store values for all keys. Sparse maps store a default value
   and the values which differ from the default.
@@ -13,6 +13,9 @@ description:
   key to be bounded, instead they are parametized by a finite set of
   valid keys. The key subset is retrieved with help of the excellent
   'reflection' library.
+  .
+  Maps in this library provide most of their functions in typeclasses and so
+  the modules are designed to be imported unqualified.
 license:             MIT
 license-file:        LICENSE
 author:              Paweł Nowak
