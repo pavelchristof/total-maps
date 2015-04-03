@@ -114,7 +114,7 @@ instance (Ord k, Enum k, Bounded k) => Metric (TotalSparseMap k)
 
 -- Serial instances.
 
--- | Complexity: 'serializeWith' O(n), 'deserializeWith' O(n * log n)
+-- | Complexity: 'serializeWith' O(n), 'deserializeWith' O(n)
 instance (Ord k, Enum k, Bounded k, Serial k) => Serial1 (TotalSparseMap k) where
     serializeWith f (TotalSparseMap m d) = do
         serializeWith f m
@@ -123,7 +123,7 @@ instance (Ord k, Enum k, Bounded k, Serial k) => Serial1 (TotalSparseMap k) wher
         <$> deserializeWith f
         <*> f
 
--- | Complexity: 'serialize' O(n), 'deserialize' O(n * log n)
+-- | Complexity: 'serialize' O(n), 'deserialize' O(n)
 instance (Ord k, Enum k, Bounded k, Serial k, Serial a)
          => Serial (TotalSparseMap k a) where
     serialize m = serializeWith serialize m
