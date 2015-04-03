@@ -14,6 +14,8 @@ Total maps
   valid keys. The key subset is retrieved with help of the excellent
   'reflection' library.
   
+  The Data.Total.Array modules provide a total map implementation based on vectors.
+  It should be usually faster Maps, unless you need to adjust single elements.
+  
   Maps in this library provide most of their functions in typeclasses and so
   the modules are designed to be imported unqualified.
-  
