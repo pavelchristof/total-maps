@@ -4,13 +4,13 @@
 {-# LANGUAGE Trustworthy #-}
 -----------------------------------------------------------------------------
 -- |
--- Description :  Bounded sparse total map.
+-- Description :  Bounded, sparse, total map.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
 -- Portability :  GHC >= 7.10
 --
--- Sparse total maps for bounded types.
+-- Sparse, total maps for bounded types.
 -----------------------------------------------------------------------------
 module Data.Total.Map.Sparse where
 

@@ -7,13 +7,13 @@
 {-# LANGUAGE Trustworthy #-}
 -----------------------------------------------------------------------------
 -- |
--- Description :  Bounded dense total map.
+-- Description :  Bounded, dense, total map.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
 -- Portability :  GHC >= 7.10
 --
--- Dense total maps for bounded types.
+-- Dense, total, maps for bounded types.
 -----------------------------------------------------------------------------
 module Data.Total.Map where
 

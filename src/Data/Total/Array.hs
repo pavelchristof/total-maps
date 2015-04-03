@@ -4,13 +4,13 @@
 {-# LANGUAGE TypeFamilies #-}
 -----------------------------------------------------------------------------
 -- |
--- Description :  Bounded dense total map implemented as a vector.
+-- Description :  Bounded, dense, total map implemented as a vector.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
 -- Portability :  GHC >= 7.10
 --
--- Bounded dense total map implemented as a vector.
+-- Bounded, dense, total map implemented as a vector.
 -----------------------------------------------------------------------------
 module Data.Total.Array (
     TotalArray(..)
@@ -91,7 +91,7 @@ instance (Enum k, Bounded k) => FoldableWithKey (TotalArray k) where
     foldMapWithKey f (TotalArray v) =
         Vector.ifoldr (mappend .: f . fromIndex) mempty v
 
--- | Complexity: 'traverseWithKEy' O(n * k)
+-- | Complexity: 'traverseWithKey' O(n * k)
 instance (Enum k, Bounded k) => TraversableWithKey (TotalArray k) where
     traverseWithKey f (TotalArray v) =
         TotalArray <$> traverse (\(i, x) -> f (fromIndex i) x) (Vector.indexed v)

@@ -10,13 +10,13 @@
 {-# LANGUAGE Trustworthy #-}
 -----------------------------------------------------------------------------
 -- |
--- Description :  Subset dense total map.
+-- Description :  Subset, dense, total map.
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
 -- Portability :  GHC >= 7.10
 --
--- Dense total maps parametrized by a set of keys.
+-- Dense, total, maps parametrized by a set of keys.
 -----------------------------------------------------------------------------
 module Data.Total.Map.Subset (
     Subset,
