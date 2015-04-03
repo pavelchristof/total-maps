@@ -8,7 +8,7 @@
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
--- Portability :  GHC >= 7.10
+-- Portability :  portable
 --
 -- Bounded, dense, total map implemented as a vector.
 -----------------------------------------------------------------------------
@@ -24,7 +24,8 @@ import           Data.Proxy
 import           Data.Vector (Vector)
 import qualified Data.Vector as Vector
 import           Linear
-import           Prelude hiding (zip, zipWith)
+import           Prelude ()
+import           Prelude.Compat hiding (zip, zipWith)
 
 infixr 9 .:
 

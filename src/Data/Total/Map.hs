@@ -11,7 +11,7 @@
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
--- Portability :  GHC >= 7.10
+-- Portability :  portable
 --
 -- Dense, total, maps for bounded types.
 -----------------------------------------------------------------------------
@@ -25,7 +25,8 @@ import           Data.List (sort)
 import           Data.Map (Map)
 import qualified Data.Map as Map
 import           Linear
-import           Prelude hiding (zip)
+import           Prelude ()
+import           Prelude.Compat hiding (zip)
 
 -- | A total map from keys k to values a.
 --

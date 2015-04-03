@@ -8,7 +8,7 @@
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
--- Portability :  GHC >= 7.10
+-- Portability :  GHC only
 --
 -- Sparse, total maps for bounded types.
 -----------------------------------------------------------------------------
@@ -25,7 +25,8 @@ import           Data.Semigroup hiding (First, getFirst)
 import           Data.Total.Internal.SparseFold
 import           Data.Total.Map
 import           Linear
-import           Prelude hiding (zip, lookup)
+import           Prelude ()
+import           Prelude.Compat hiding (zip, lookup)
 
 -- | A total sparse map from keys k to values a. This map is implemented as a
 -- partial map and a default value. 'pure' creates an all-default values map

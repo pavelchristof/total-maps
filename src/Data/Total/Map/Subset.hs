@@ -14,7 +14,7 @@
 -- License     :  MIT
 -- Maintainer  :  Paweł Nowak <pawel834@gmail.com>
 -- Stability   :  provisional
--- Portability :  GHC >= 7.10
+-- Portability :  portable
 --
 -- Dense, total, maps parametrized by a set of keys.
 -----------------------------------------------------------------------------
@@ -36,7 +36,8 @@ import           Data.Reflection
 import qualified Data.Set as Set
 import           Data.Total.Subset
 import           Linear
-import           Prelude hiding (zip)
+import           Prelude ()
+import           Prelude.Compat hiding (zip)
 
 -- | A total map from a subset s of keys k to values a, e.g. a restriction
 -- of a partial function @k -> a@ to a subset of its domain on which the
