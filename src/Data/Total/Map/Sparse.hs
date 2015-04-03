@@ -23,6 +23,7 @@ import           Data.Maybe
 import           Data.Monoid (First(..))
 import           Data.Semigroup hiding (First, getFirst)
 import           Data.Total.Internal.SparseFold
+import           Data.Total.Map
 import           Linear
 import           Prelude hiding (zip, lookup)
 
@@ -126,3 +127,11 @@ instance (Ord k, Enum k, Bounded k, Serial k, Serial a)
          => Serial (TotalSparseMap k a) where
     serialize m = serializeWith serialize m
     deserialize = deserializeWith deserialize
+
+-- | Convert the sparse map to a dense one.
+--
+-- Complexity: O(n * log n)
+toDenseMap :: (Ord k, Enum k, Bounded k) => TotalSparseMap k a -> TotalMap k a
+toDenseMap (TotalSparseMap m d) = TotalMap (Map.union m fallback)
+  where
+    TotalMap fallback = pure d
