@@ -135,7 +135,8 @@ instance Subset s k => Distributive (TotalSubsetArray s k) where
       where
         index' i (TotalSubsetArray v) = Vector.unsafeIndex v i
 
--- | Convert from and to a total function.
+-- | Convert from and to a partial function that would be total if
+-- restricted to s.
 --
 -- Complexity: tabulate O(n), index O(log n)
 instance (Ord k, Subset s k) => Representable (TotalSubsetArray s k) where
