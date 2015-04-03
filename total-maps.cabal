@@ -16,7 +16,7 @@ description:
   'reflection' library.
   .
   The Data.Total.Array modules provide total map implementations based on vectors.
-  It should be usually faster Maps, unless you need to adjust single elements.
+  It should usually be faster then Maps, unless you need to adjust single elements.
   .
   Maps in this library provide most of their functions in typeclasses and so
   the modules are designed to be imported unqualified.
