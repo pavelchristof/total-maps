@@ -24,6 +24,7 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:     Data.Total.Map
+                       Data.Total.Map.Subset
   default-extensions:  FlexibleContexts, FlexibleInstances,
                        ScopedTypeVariables
   build-depends:       base <5, containers >=0.3 && <1, reflection == 1.*,
