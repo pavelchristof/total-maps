@@ -44,7 +44,7 @@ library
                        Data.Total.Internal.SparseFold
   default-extensions:  FlexibleContexts, FlexibleInstances,
                        ScopedTypeVariables, AutoDeriveTypeable
-  build-depends:       base ==4.*, containers >=0.3 && <1, reflection == 1.*,
+  build-depends:       base ==4.*, containers >=0.3 && <1, reflection <3,
                        keys ==3.*, linear >=1.1 && <2, bytes >=0.2 && <1,
                        distributive ==0.*, adjunctions ==4.*,
                        semigroups ==0.*, vector >=0.10 && <1,
